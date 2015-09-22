@@ -1,8 +1,8 @@
-<div class="padding">
+<div class="padding" ng-controller="HomeController">
 
   <super-navbar>
     <super-navbar-title>
-      Welcome to Supersonic!
+      Check It Out
     </super-navbar-title>
   </super-navbar>
 
@@ -10,12 +10,41 @@
 
   <p>Below, you can see our multi-page navigation in action. Tap on a button to move to a new view.</p>
 
-  <super-navigate view-id="using-the-scanner">
-    <button class="button button-block button-positive icon-left super-wand">Using the AppGyver Scanner</button>
+  <img src="comm.jpg">
+  var options = {
+  quality: 50,
+  allowEdit: true,
+  targetWidth: 300,
+  targetHeight: 300,
+  encodingType: "png",
+};
+supersonic.media.camera.getFromPhotoLibrary(options).then( function(result){
+  // Do something with the image URI
+});
+supersonic.supersonic.media.camera.getFromPhotoLibrary : (
+  options?: {
+    quality?: Integer,
+    destinationType?: String,
+    allowEdit?: Boolean,
+    encodingType?: String,
+    targetWidth?: Integer,
+    targetHeight?: Integer,
+    mediaType?: String,
+    correctOrientation?: Boolean,
+  }
+)
+=> Promise: result: String
+
+  <super-navigate view-id="my-lists">
+    <button class="button button-block button-positive icon-left super-wand">My Lists</button>
   </super-navigate>
 
-  <super-navigate view-id="learn-more">
-    <button class="button button-block button-positive icon-left super-university">Learn more</button>
+  <super-navigate view-id="my-stores">
+    <button class="button button-block button-positive icon-left super-wand">My Stores</button>
+  </super-navigate>
+
+  <super-navigate view-id="my-friends">
+    <button class="button button-block button-positive icon-left super-university">My Friends</button>
   </super-navigate>
 
   <h2>Get in touch with us!</h2>
